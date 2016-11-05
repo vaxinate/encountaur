@@ -1,0 +1,6 @@
+<div class="jumbotron">
+  <h2><%= gettext "Welcome to %{name}", name: "My Thing" %></h2>
+  <p class="lead">
+    It doesn't do anything yet
+  </p>
+</div>
