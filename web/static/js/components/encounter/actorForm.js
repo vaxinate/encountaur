@@ -11,7 +11,7 @@ export default class ActorForm extends Component {
   }
 
   constructor(props) {
-    return super(props)
+    super(props)
     this.state = INITIAL_STATE
   }
 
@@ -21,10 +21,8 @@ export default class ActorForm extends Component {
   }
 
   onSubmit = (event) => {
-    console.log('submit actor')
-    console.log(this.state)
-
-    this.clear()
+    console.log('onSubmit')
+    this.props.onSave(this.state)
     return event.preventDefault()
   }
 
