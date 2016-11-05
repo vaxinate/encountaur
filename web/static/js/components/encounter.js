@@ -1,6 +1,10 @@
 import React, {PropTypes, Component} from 'react'
 import ReactDOM from 'react-dom'
 
+import EncounterHeader from './encounter/header'
+import EncounterActors from './encounter/actors'
+import ActorForm from './encounter/actorForm'
+
 class Encounter extends Component {
   static propTypes = {
     encounter: PropTypes.object.isRequired,
@@ -11,9 +15,11 @@ class Encounter extends Component {
 
     return (
       <section className="Encounter">
-        <header>
-          <h1>{encounter.name}</h1>
-        </header>
+        <EncounterHeader encounter={encounter} />
+        <ActorForm encounterId={encounter.id}>
+          <h2>New Actor</h2>
+        </ActorForm>
+        <EncounterActors actors={encounter.actors} />
       </section>
     )
   }
@@ -22,6 +28,13 @@ class Encounter extends Component {
 const container = document.getElementById('Encounter')
 if (container) {
   // TODO: use real data here obviously
-  const encounter = {name: "this is fake"}
+  const encounter = {
+    id: 1,
+    name: 'this is fake',
+    actors: [
+      {id: 1, name: 'Fake Dude', hp: 10},
+      {id: 2, name: 'Fake Lady', hp: 10},
+    ]
+  }
   ReactDOM.render(<Encounter encounter={encounter}/>, container)
 }
