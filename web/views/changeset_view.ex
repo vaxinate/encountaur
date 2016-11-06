@@ -1,11 +1,11 @@
-defmodule PhoenixEncounterThing.ChangesetView do
-  use PhoenixEncounterThing.Web, :view
+defmodule Encountaur.ChangesetView do
+  use Encountaur.Web, :view
 
   @doc """
   Traverses and translates changeset errors.
 
   See `Ecto.Changeset.traverse_errors/2` and
-  `PhoenixEncounterThing.ErrorHelpers.translate_error/1` for more details.
+  `Encountaur.ErrorHelpers.translate_error/1` for more details.
   """
   def translate_errors(changeset) do
     Ecto.Changeset.traverse_errors(changeset, &translate_error/1)

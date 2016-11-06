@@ -1,12 +1,12 @@
-defmodule PhoenixEncounterThing.Web do
+defmodule Encountaur.Web do
   @moduledoc """
   A module that keeps using definitions for controllers,
   views and so on.
 
   This can be used in your application as:
 
-      use PhoenixEncounterThing.Web, :controller
-      use PhoenixEncounterThing.Web, :view
+      use Encountaur.Web, :controller
+      use Encountaur.Web, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -30,12 +30,12 @@ defmodule PhoenixEncounterThing.Web do
     quote do
       use Phoenix.Controller
 
-      alias PhoenixEncounterThing.Repo
+      alias Encountaur.Repo
       import Ecto
       import Ecto.Query
 
-      import PhoenixEncounterThing.Router.Helpers
-      import PhoenixEncounterThing.Gettext
+      import Encountaur.Router.Helpers
+      import Encountaur.Gettext
     end
   end
 
@@ -49,9 +49,9 @@ defmodule PhoenixEncounterThing.Web do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import PhoenixEncounterThing.Router.Helpers
-      import PhoenixEncounterThing.ErrorHelpers
-      import PhoenixEncounterThing.Gettext
+      import Encountaur.Router.Helpers
+      import Encountaur.ErrorHelpers
+      import Encountaur.Gettext
     end
   end
 
@@ -65,10 +65,10 @@ defmodule PhoenixEncounterThing.Web do
     quote do
       use Phoenix.Channel
 
-      alias PhoenixEncounterThing.Repo
+      alias Encountaur.Repo
       import Ecto
       import Ecto.Query
-      import PhoenixEncounterThing.Gettext
+      import Encountaur.Gettext
     end
   end
 

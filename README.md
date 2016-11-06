@@ -1,4 +1,4 @@
-# PhoenixEncounterThing
+# Encountaur
 
 To start your Phoenix app:
 

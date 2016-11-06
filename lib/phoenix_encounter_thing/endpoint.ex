@@ -1,7 +1,7 @@
-defmodule PhoenixEncounterThing.Endpoint do
+defmodule Encountaur.Endpoint do
   use Phoenix.Endpoint, otp_app: :phoenix_encounter_thing
 
-  socket "/socket", PhoenixEncounterThing.UserSocket
+  socket "/socket", Encountaur.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
@@ -38,5 +38,5 @@ defmodule PhoenixEncounterThing.Endpoint do
     key: "_phoenix_encounter_thing_key",
     signing_salt: "rqIvo9Dt"
 
-  plug PhoenixEncounterThing.Router
+  plug Encountaur.Router
 end

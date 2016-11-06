@@ -1,4 +1,4 @@
-defmodule PhoenixEncounterThing.ErrorHelpers do
+defmodule Encountaur.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -32,9 +32,9 @@ defmodule PhoenixEncounterThing.ErrorHelpers do
     #     dgettext "errors", "is invalid"
     #
     if count = opts[:count] do
-      Gettext.dngettext(PhoenixEncounterThing.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(Encountaur.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(PhoenixEncounterThing.Gettext, "errors", msg, opts)
+      Gettext.dgettext(Encountaur.Gettext, "errors", msg, opts)
     end
   end
 end

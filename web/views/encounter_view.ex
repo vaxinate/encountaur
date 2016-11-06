@@ -1,4 +1,4 @@
-defmodule PhoenixEncounterThing.EncounterView do
-  use PhoenixEncounterThing.Web, :view
-  alias PhoenixEncounterThing.Encounter
+defmodule Encountaur.EncounterView do
+  use Encountaur.Web, :view
+  alias Encountaur.Encounter
 end

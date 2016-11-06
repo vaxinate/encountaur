@@ -1,4 +1,4 @@
-defmodule PhoenixEncounterThing.ConnCase do
+defmodule Encountaur.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -20,23 +20,23 @@ defmodule PhoenixEncounterThing.ConnCase do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
 
-      alias PhoenixEncounterThing.Repo
+      alias Encountaur.Repo
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
 
-      import PhoenixEncounterThing.Router.Helpers
+      import Encountaur.Router.Helpers
 
       # The default endpoint for testing
-      @endpoint PhoenixEncounterThing.Endpoint
+      @endpoint Encountaur.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(PhoenixEncounterThing.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Encountaur.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(PhoenixEncounterThing.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Encountaur.Repo, {:shared, self()})
     end
 
     {:ok, conn: Phoenix.ConnTest.build_conn()}

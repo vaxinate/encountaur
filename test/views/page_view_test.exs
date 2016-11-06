@@ -1,3 +1,3 @@
-defmodule PhoenixEncounterThing.PageViewTest do
-  use PhoenixEncounterThing.ConnCase, async: true
+defmodule Encountaur.PageViewTest do
+  use Encountaur.ConnCase, async: true
 end

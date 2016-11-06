@@ -1,4 +1,4 @@
-defmodule PhoenixEncounterThing.ChannelCase do
+defmodule Encountaur.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -20,22 +20,22 @@ defmodule PhoenixEncounterThing.ChannelCase do
       # Import conveniences for testing with channels
       use Phoenix.ChannelTest
 
-      alias PhoenixEncounterThing.Repo
+      alias Encountaur.Repo
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
 
 
       # The default endpoint for testing
-      @endpoint PhoenixEncounterThing.Endpoint
+      @endpoint Encountaur.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(PhoenixEncounterThing.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Encountaur.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(PhoenixEncounterThing.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Encountaur.Repo, {:shared, self()})
     end
 
     :ok

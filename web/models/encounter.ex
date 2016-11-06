@@ -1,9 +1,9 @@
-defmodule PhoenixEncounterThing.Encounter do
-  use PhoenixEncounterThing.Web, :model
+defmodule Encountaur.Encounter do
+  use Encountaur.Web, :model
 
   schema "encounters" do
     field :name, :string
-    has_many :actors, PhoenixEncounterThing.Actor
+    has_many :actors, Encountaur.Actor
 
     timestamps
   end

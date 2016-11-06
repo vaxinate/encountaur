@@ -1,4 +1,4 @@
 ExUnit.start
 
-Ecto.Adapters.SQL.Sandbox.mode(PhoenixEncounterThing.Repo, :manual)
+Ecto.Adapters.SQL.Sandbox.mode(Encountaur.Repo, :manual)
 

@@ -1,3 +1,3 @@
-defmodule PhoenixEncounterThing.LayoutViewTest do
-  use PhoenixEncounterThing.ConnCase, async: true
+defmodule Encountaur.LayoutViewTest do
+  use Encountaur.ConnCase, async: true
 end

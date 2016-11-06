@@ -1,5 +1,5 @@
-defmodule PhoenixEncounterThing.ErrorView do
-  use PhoenixEncounterThing.Web, :view
+defmodule Encountaur.ErrorView do
+  use Encountaur.Web, :view
 
   def render("404.html", _assigns) do
     "Page not found"

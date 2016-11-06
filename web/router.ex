@@ -1,5 +1,5 @@
-defmodule PhoenixEncounterThing.Router do
-  use PhoenixEncounterThing.Web, :router
+defmodule Encountaur.Router do
+  use Encountaur.Web, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,7 +13,7 @@ defmodule PhoenixEncounterThing.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", PhoenixEncounterThing do
+  scope "/", Encountaur do
     pipe_through :browser # Use the default browser stack
 
     get "/encounters",     EncounterController, :index
@@ -23,7 +23,7 @@ defmodule PhoenixEncounterThing.Router do
   end
 
   # Other scopes may use custom stacks.
-  scope "/api", PhoenixEncounterThing do
+  scope "/api", Encountaur do
     pipe_through :api
 
     resources "/actors", ActorController, except: [:new, :edit]

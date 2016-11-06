@@ -1,3 +1,3 @@
-defmodule PhoenixEncounterThing.PageView do
-  use PhoenixEncounterThing.Web, :view
+defmodule Encountaur.PageView do
+  use Encountaur.Web, :view
 end

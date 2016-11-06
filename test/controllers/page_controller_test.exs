@@ -1,5 +1,5 @@
-defmodule PhoenixEncounterThing.PageControllerTest do
-  use PhoenixEncounterThing.ConnCase
+defmodule Encountaur.PageControllerTest do
+  use Encountaur.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"

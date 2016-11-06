@@ -1,7 +1,7 @@
-defmodule PhoenixEncounterThing.ActorControllerTest do
-  use PhoenixEncounterThing.ConnCase
+defmodule Encountaur.ActorControllerTest do
+  use Encountaur.ConnCase
 
-  alias PhoenixEncounterThing.Actor
+  alias Encountaur.Actor
   @valid_attrs %{hp: 42, name: "some content"}
   @invalid_attrs %{}
 

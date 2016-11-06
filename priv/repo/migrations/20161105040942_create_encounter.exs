@@ -1,4 +1,4 @@
-defmodule PhoenixEncounterThing.Repo.Migrations.CreateEncounter do
+defmodule Encountaur.Repo.Migrations.CreateEncounter do
   use Ecto.Migration
 
   def change do

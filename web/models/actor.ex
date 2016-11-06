@@ -1,10 +1,10 @@
-defmodule PhoenixEncounterThing.Actor do
-  use PhoenixEncounterThing.Web, :model
+defmodule Encountaur.Actor do
+  use Encountaur.Web, :model
 
   schema "actors" do
     field :name, :string
     field :hp, :integer
-    belongs_to :encounter, PhoenixEncounterThing.Encounter
+    belongs_to :encounter, Encountaur.Encounter
 
     timestamps()
   end

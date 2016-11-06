@@ -1,7 +1,7 @@
-defmodule PhoenixEncounterThing.ActorController do
-  use PhoenixEncounterThing.Web, :controller
+defmodule Encountaur.ActorController do
+  use Encountaur.Web, :controller
 
-  alias PhoenixEncounterThing.Actor
+  alias Encountaur.Actor
 
   def create(conn, %{"actor" => actor_params}) do
     changeset = Actor.changeset(%Actor{}, actor_params)
@@ -15,7 +15,7 @@ defmodule PhoenixEncounterThing.ActorController do
       {:error, changeset} ->
         conn
         |> put_status(:unprocessable_entity)
-        |> render(PhoenixEncounterThing.ChangesetView, "error.json", changeset: changeset)
+        |> render(Encountaur.ChangesetView, "error.json", changeset: changeset)
     end
   end
 
@@ -34,7 +34,7 @@ defmodule PhoenixEncounterThing.ActorController do
       {:error, changeset} ->
         conn
         |> put_status(:unprocessable_entity)
-        |> render(PhoenixEncounterThing.ChangesetView, "error.json", changeset: changeset)
+        |> render(Encountaur.ChangesetView, "error.json", changeset: changeset)
     end
   end
 

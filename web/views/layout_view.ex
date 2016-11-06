@@ -1,3 +1,3 @@
-defmodule PhoenixEncounterThing.LayoutView do
-  use PhoenixEncounterThing.Web, :view
+defmodule Encountaur.LayoutView do
+  use Encountaur.Web, :view
 end

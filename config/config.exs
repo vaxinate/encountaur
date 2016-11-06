@@ -7,14 +7,14 @@ use Mix.Config
 
 # General application configuration
 config :phoenix_encounter_thing,
-  ecto_repos: [PhoenixEncounterThing.Repo]
+  ecto_repos: [Encountaur.Repo]
 
 # Configures the endpoint
-config :phoenix_encounter_thing, PhoenixEncounterThing.Endpoint,
+config :phoenix_encounter_thing, Encountaur.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "PimGd3dA+IPVogNBu+MygZsByj2PHxLarJjXxztcPQupLgUgAZPRz/O09EJ279ZF",
-  render_errors: [view: PhoenixEncounterThing.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: PhoenixEncounterThing.PubSub,
+  render_errors: [view: Encountaur.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: Encountaur.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
