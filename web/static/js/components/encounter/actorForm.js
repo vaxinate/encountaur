@@ -1,13 +1,14 @@
 import React, {Component, PropTypes} from 'react'
 
 const INITIAL_STATE = {
-  name: 'name',
-  hp: 'XX',
+  name: 'Cool Thing',
+  hp: 10,
 }
 
 export default class ActorForm extends Component {
   static propTypes = {
     onSave: PropTypes.func.isRequired,
+    encounterId: PropTypes.number.isRequired,
   }
 
   constructor(props) {
@@ -21,9 +22,10 @@ export default class ActorForm extends Component {
   }
 
   onSubmit = (event) => {
-    console.log('onSubmit')
-    this.props.onSave(this.state)
-    return event.preventDefault()
+    const {encounterId} = this.props
+    const {name, hp} = this.state
+
+    return this.props.onSave({encounterId, name, hp})
   }
 
   clear() {
@@ -32,7 +34,7 @@ export default class ActorForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.onSubmit}>
+      <form>
         {this.props.children}
         <input
           name="name"
@@ -46,7 +48,9 @@ export default class ActorForm extends Component {
           onChange={this.onChangeValues}
         />
         <br/>
-        <button type="submit">Save</button>
+        <button type="button" onClick={this.onSubmit}>
+          Save
+        </button>
       </form>
     )
   }

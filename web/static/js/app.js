@@ -20,4 +20,7 @@ import "phoenix_html"
 
 // import socket from "./socket"
 
+require('es6-promise').polyfill();
+require('isomorphic-fetch');
+
 import './components/encounter'
