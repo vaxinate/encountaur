@@ -18,11 +18,14 @@ defmodule PhoenixEncounterThing.Router do
 
     get "/encounters",     EncounterController, :index
     get "/encounters/:id", EncounterController, :show
+
     get "/", PageController, :index
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", PhoenixEncounterThing do
-  #   pipe_through :api
-  # end
+  scope "/api", PhoenixEncounterThing do
+    pipe_through :api
+
+    resources "/actors", ActorController, except: [:new, :edit]
+  end
 end
