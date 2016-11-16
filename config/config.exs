@@ -6,11 +6,11 @@
 use Mix.Config
 
 # General application configuration
-config :phoenix_encounter_thing,
+config :encountaur,
   ecto_repos: [Encountaur.Repo]
 
 # Configures the endpoint
-config :phoenix_encounter_thing, Encountaur.Endpoint,
+config :encountaur, Encountaur.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "PimGd3dA+IPVogNBu+MygZsByj2PHxLarJjXxztcPQupLgUgAZPRz/O09EJ279ZF",
   render_errors: [view: Encountaur.ErrorView, accepts: ~w(html json)],

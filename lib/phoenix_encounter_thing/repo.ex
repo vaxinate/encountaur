@@ -1,3 +1,3 @@
 defmodule Encountaur.Repo do
-  use Ecto.Repo, otp_app: :phoenix_encounter_thing
+  use Ecto.Repo, otp_app: :encountaur
 end
