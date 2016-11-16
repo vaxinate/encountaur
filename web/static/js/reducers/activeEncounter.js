@@ -27,7 +27,7 @@ export default function activeEncounter(state = INITIAL_STATE, action) {
     case Encounter.BEGIN_FIND:
       return {...state, loading: true}
     case Encounter.FIND_SUCCESS:
-      return {payload, loading: false}
+      return {...payload, loading: false}
     case Encounter.FIND_ERROR:
       console.log(payload)
       console.log(payload.stack)

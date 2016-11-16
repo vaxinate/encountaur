@@ -2,7 +2,7 @@
 // path: full API endpoint path
 // method: HTTP verb
 // params: Object of request params with snake case keys for phoenix
-export default function apiRequest(path, method, params) {
+export default function apiRequest(path, method = 'GET', params) {
   const headers = new Headers({
     "Content-Type": "application/json"
   })
@@ -13,7 +13,8 @@ export default function apiRequest(path, method, params) {
     body: JSON.stringify(params)
   }).then((resp) => {
     if (!resp.ok) {
-      throw new Error(`${resp.statusText} (${resp.status})`)
+      const error = new Error(`${resp.statusText} (${resp.status})`)
+      return Promise.reject({error, resp})
     }
 
     return resp.json()

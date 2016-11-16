@@ -3,14 +3,20 @@ import {bindActionCreators} from 'redux'
 import {Provider, connect} from 'react-redux'
 import ReactDOM from 'react-dom'
 import * as ActorActionCreators from '../actions/actor'
-import createAppStore from '../util/createAppStore'
+import * as EncounterActionCreators from '../actions/encounter'
 import EncounterHeader from './encounter/header'
 import EncounterActors from './encounter/actors'
 import ActorForm from './encounter/actorForm'
+import createAppStore from '../util/createAppStore'
 
 class Encounter extends Component {
   static propTypes = {
     activeEncounter: PropTypes.object.isRequired,
+  }
+
+  componentWillMount() {
+    const {encounterActions, activeEncounter} = this.props
+    encounterActions.find(activeEncounter.id)
   }
 
   render() {
@@ -35,6 +41,7 @@ const mapStateToProps = (state) => state
 const mapActionsToProps = (dispatch) => {
   return {
     actorActions: bindActionCreators(ActorActionCreators, dispatch),
+    encounterActions: bindActionCreators(EncounterActionCreators, dispatch)
   }
 }
 
@@ -47,16 +54,12 @@ const ConnectedEncounter = connect(
 const container = document.getElementById('Encounter')
 
 if (container) {
-  // TODO: replace this with real data at some point
+  const {encounterId} = container.dataset
   const store = createAppStore({
     activeEncounter: {
-      id: 1,
-      name: 'this is fake',
-      actors: [
-        {id: 1, name: 'Fake Dude', hp: 10},
-        {id: 2, name: 'Fake Lady', hp: 10},
-      ],
-    },
+      id: parseInt(encounterId, 10),
+      actors: [],
+    }
   })
 
   ReactDOM.render(
