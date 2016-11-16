@@ -1,4 +1,4 @@
-defmodule Encountaur.EncounterController do
+defmodule Encountaur.Frontend.EncounterController do
   use Encountaur.Web, :controller
 
   def index(conn, _params) do

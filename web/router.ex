@@ -16,8 +16,9 @@ defmodule Encountaur.Router do
   scope "/", Encountaur do
     pipe_through :browser # Use the default browser stack
 
-    get "/encounters",     EncounterController, :index
-    get "/encounters/:id", EncounterController, :show
+
+    get "/encounters",     Frontend.EncounterController, :index
+    get "/encounters/:id", Frontend.EncounterController, :show
 
     get "/", PageController, :index
   end
@@ -26,6 +27,6 @@ defmodule Encountaur.Router do
   scope "/api", Encountaur do
     pipe_through :api
 
-    resources "/actors", ActorController, except: [:new, :edit]
+    resources "/actors", Api.ActorController, except: [:new, :edit]
   end
 end

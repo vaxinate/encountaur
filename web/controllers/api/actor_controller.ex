@@ -1,4 +1,4 @@
-defmodule Encountaur.ActorController do
+defmodule Encountaur.Api.ActorController do
   use Encountaur.Web, :controller
 
   alias Encountaur.Actor
