@@ -1,4 +1,5 @@
 import * as Actor from '../actions/actor'
+import * as Encounter from '../actions/encounter'
 
 const INITIAL_STATE = {
   id: null,
@@ -9,16 +10,25 @@ const INITIAL_STATE = {
 }
 
 export default function activeEncounter(state = INITIAL_STATE, action) {
-  console.log(action.type)
+  const {type, payload, error, meta} = action
+  console.log(type)
+
   switch(action.type) {
     case Actor.BEGIN_CREATE:
       return {...state, loading: true}
     case Actor.CREATE_SUCCESS:
       console.log('action: ', action)
-      const actors = [...state.actors, action.payload]
+      const actors = [...state.actors, payload]
       return {...state, actors, loading: false}
     case Actor.CREATE_ERROR:
-      const {error, payload} = action
+      console.log(payload)
+      console.log(payload.stack)
+      return {...state, error}
+    case Encounter.BEGIN_FIND:
+      return {...state, loading: true}
+    case Encounter.FIND_SUCCESS:
+      return {payload, loading: false}
+    case Encounter.FIND_ERROR:
       console.log(payload)
       console.log(payload.stack)
       return {...state, error}
