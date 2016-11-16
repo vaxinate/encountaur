@@ -25,11 +25,8 @@ export default class ActorForm extends Component {
     const {encounterId} = this.props
     const {name, hp} = this.state
 
-    return this.props.onSave({encounterId, name, hp})
-  }
-
-  clear() {
-    this.setState(INITIAL_STATE)
+    this.props.onSave({encounterId, name, hp})
+    this.setState({name: '', hp: ''})
   }
 
   render() {

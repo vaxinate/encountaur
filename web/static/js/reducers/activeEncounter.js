@@ -18,7 +18,7 @@ export default function activeEncounter(state = INITIAL_STATE, action) {
       return {...state, loading: true}
     case Actor.CREATE_SUCCESS:
       console.log('action: ', action)
-      const actors = [...state.actors, payload]
+      const actors = [payload, ...state.actors]
       return {...state, actors, loading: false}
     case Actor.CREATE_ERROR:
       console.log(payload)
