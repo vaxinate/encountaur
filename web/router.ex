@@ -28,5 +28,6 @@ defmodule Encountaur.Router do
     pipe_through :api
 
     resources "/actors", Api.ActorController, except: [:new, :edit]
+    resources "/encounters", Api.EncounterController, except: [:new, :edit]
   end
 end
